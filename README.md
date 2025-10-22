@@ -1,202 +1,194 @@
-# AI-Powered Email Reply Generator ✉️
+# AI-Powered Email Reply Generator ✉️🤖
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)  [![Stars](https://img.shields.io/github/stars/Kunal-109/AI-Powered-Email-Reply-generator)](https://github.com/Kunal-109/AI-Powered-Email-Reply-generator/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
+[![Stars](https://img.shields.io/github/stars/Kunal-109/AI-Powered-Email-Reply-generator)](https://github.com/Kunal-109/AI-Powered-Email-Reply-generator/stargazers)
 
-## Description 📝
+> **A Chrome extension that generates intelligent email replies directly in Gmail using AI.**
 
-The AI-Powered Email Reply Generator is a project designed to simplify and expedite the process of responding to emails. It comprises a React-based frontend and a Spring Boot backend, leveraging AI to generate appropriate and tailored email replies based on the content of the original email and a user-specified tone.
+## 🎯 Overview
 
-## Table of Contents 🗂️
+AI-Powered Email Reply Generator is a Chrome extension that integrates seamlessly with Gmail to generate contextually appropriate email replies. Select your desired tone (Professional, Friendly, Casual) and let AI craft the perfect response instantly.
 
-1.  [Features](#features)
-2.  [Tech Stack](#tech-stack)
-3.  [Installation](#installation)
-4.  [Usage](#usage)
-5.  [Project Structure](#project-structure)
-6.  [API Reference](#api-reference)
-7.  [Contributing](#contributing)
-8.  [License](#license)
-9.  [Important Links](#important-links)
-10. [Footer](#footer-page)
+### ✨ Key Features
 
-## Features
+- 🔌 **Gmail Integration** - Reply button appears directly in Gmail's compose window
+- 🎭 **Multiple Tones** - Choose from Professional, Friendly, Casual, or None
+- ⚡ **Instant Generation** - AI-powered replies in seconds
+- 🎨 **Native UI** - Blends seamlessly with Gmail's interface
+- 📋 **One-Click Insert** - Generated reply inserts directly into compose box
 
-*   **AI-Powered Reply Generation**: Utilizes AI (Gemini API) to generate email replies based on email content.
-*   **Tone Selection**: Allows users to specify the tone of the generated reply (Professional, Friendly, Casual, or None).
-*   **Gmail Extension**: A Chrome extension is available for direct integration with Gmail, enabling reply generation within the Gmail interface.
-*   **React Frontend**: User-friendly interface built with React and Material UI.
-*   **Spring Boot Backend**: Handles API requests and integrates with the AI model.
-*   **Copy to Clipboard**: Easily copy the generated reply to the clipboard.
+## 🛠️ Tech Stack
 
-## Tech Stack
+| Component | Technology |
+|-----------|-----------|
+| **Extension** | Vanilla JavaScript, Chrome Extension API |
+| **Backend** | Spring Boot, Java |
+| **AI Model** | Google Gemini API |
+| **Frontend (Demo)** | React, Vite, Material UI |
 
-*   **Frontend**: React, JavaScript, Vite, Material UI, Emotion
-*   **Backend**: Java, Spring Boot
-*   **AI**: Gemini API
-*   **Other**: Maven
+## 📦 Installation
 
-## Installation️
+### Prerequisites
+- Java 17+
+- Node.js 16+
+- Maven
+- Chrome Browser
+- Gemini API Key ([Get it here](https://makersuite.google.com/app/apikey))
 
-To set up the project locally, follow these steps:
+### 1️⃣ Setup Backend
 
-### Frontend
+```bash
+# Navigate to backend directory
+cd email-writer-sb/email-writer-sb
 
-1.  Navigate to the frontend directory:
+# Configure API key in application.properties
+echo "gemini.api.key=YOUR_GEMINI_API_KEY" >> src/main/resources/application.properties
+echo "gemini.api.url=https://generativelanguage.googleapis.com" >> src/main/resources/application.properties
 
-    ```bash
-    cd email-writer-sb/email-writer-frontend
-    ```
+# Build and run
+mvn clean install
+mvn spring-boot:run
+```
 
-2.  Install the dependencies:
+Backend runs on `http://localhost:8080`
 
-    ```bash
-    npm install
-    ```
+### 2️⃣ Install Chrome Extension
 
-### Backend
+```bash
+# Open Chrome and navigate to
+chrome://extensions/
 
-1.  Navigate to the backend directory:
+# Enable "Developer mode" (top-right toggle)
+# Click "Load unpacked"
+# Select the Email-Writer-EXT folder
+```
 
-    ```bash
-    cd email-writer-sb/email-writer-sb
-    ```
+### 3️⃣ (Optional) Run Demo Frontend
 
-2.  Build the project using Maven:
+```bash
+cd email-writer-sb/email-writer-frontend
+npm install
+npm run dev
+```
 
-    ```bash
-    mvn clean install
-    ```
+Demo UI available at `http://localhost:5173`
 
-### API Key Setup
+## 🚀 Usage
 
-1.  Obtain a Gemini API key from Google.
-2.  Set the `gemini.api.key` property in the `email-writer-sb/email-writer-sb/src/main/resources/application.properties` file:
+### Using the Extension in Gmail
 
-    ```properties
-    gemini.api.key=YOUR_GEMINI_API_KEY
-    gemini.api.url=https://generativelanguage.googleapis.com
-    ```
+1. **Open Gmail** and click "Compose" or "Reply"
+2. **Select Tone** from the dropdown (Professional/Friendly/Casual)
+3. **Click "AI Reply"** button
+4. **AI generates** and inserts reply into compose box
+5. **Edit if needed** and send!
 
-## Usage
+![Extension Demo](https://via.placeholder.com/800x400?text=Extension+Demo)
 
-### Running the Frontend
+### Using the Demo Frontend
 
-1.  Start the development server:
+1. Paste original email content
+2. Select desired tone
+3. Click "Generate Reply"
+4. Copy generated reply to clipboard
 
-    ```bash
-    cd email-writer-sb/email-writer-frontend
-    npm run dev
-    ```
-
-2.  Open your browser and navigate to the address provided by Vite (usually `http://localhost:5173`).
-
-### Running the Backend
-
-1.  Navigate to the backend directory:
-
-    ```bash
-    cd email-writer-sb/email-writer-sb
-    ```
-
-2.  Run the Spring Boot application:
-
-    ```bash
-    mvn spring-boot:run
-    ```
-
-3.  The backend will be accessible at `http://localhost:8080`.
-
-### Using the Extension
-
-1.  Load the unpacked extension in Chrome:
-    *   Go to `chrome://extensions/`.
-    *   Enable "Developer mode".
-    *   Click "Load unpacked" and select the `Email-Writer-EXT` directory.
-2.  Open Gmail and compose a new email or reply to an existing one.
-3.  The "AI Reply" button and tone dropdown will appear in the compose toolbar.
-4.  Select a tone (optional) and click the "AI Reply" button to generate a reply.
-
-### Real-World Use Case
-
-Imagine you receive a lengthy email requesting your input on a project proposal. Instead of spending time crafting a detailed response, you can use the AI-Powered Email Reply Generator.
-
-1.  Copy the email content into the "Original Email Content" field in the React frontend.
-2.  Select a tone, such as "Professional".
-3.  Click "Generate Reply".
-4.  The AI will generate a professional and relevant email reply, which you can then copy and paste into your email.
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 AI-Powered-Email-Reply-generator/
-├── Email-Writer-EXT/
-│   ├── content.css
-│   ├── content.js
-│   └── manifest.json
+├── Email-Writer-EXT/              # Chrome Extension
+│   ├── manifest.json              # Extension configuration
+│   ├── content.js                 # Gmail integration logic
+│   └── content.css                # Styling for extension UI
+│
 ├── email-writer-sb/
-│   ├── email-writer-frontend/
-│   │   ├── index.html
-│   │   ├── eslint.config.js
-│   │   ├── package.json
-│   │   ├── vite.config.js
-│   │   ├── README.md
+│   ├── email-writer-frontend/     # Demo React UI
 │   │   ├── src/
-│   │   │   ├── App.css
-│   │   │   ├── App.jsx
-│   │   │   ├── index.css
+│   │   │   ├── App.jsx            # Main component
 │   │   │   └── main.jsx
-│   ├── email-writer-sb/
-│   │   ├── pom.xml
-│   │   ├── mvnw
-│   │   ├── mvnw.cmd
-│   │   ├── .mvn/wrapper/maven-wrapper.properties
-│   │   ├── src/
-│   │   │   ├── main/
-│   │   │   │   ├── java/com/email/writer/
-│   │   │   │   │   ├── EmailGeneratorController.java
-│   │   │   │   │   ├── EmailGeneratorService.java
-│   │   │   │   │   ├── EmailRequest.java
-│   │   │   │   │   └── EmailWriterSbApplication.java
-│   │   │   │   └── resources/application.properties
-│   │   │   └── test/
-│   │   │   │   └── java/com/email/writer/EmailWriterSbApplicationTests.java
+│   │   ├── package.json
+│   │   └── vite.config.js
+│   │
+│   └── email-writer-sb/           # Spring Boot Backend
+│       ├── src/main/java/com/email/writer/
+│       │   ├── EmailGeneratorController.java    # REST API
+│       │   ├── EmailGeneratorService.java       # AI integration
+│       │   ├── EmailRequest.java                # Request model
+│       │   └── EmailWriterSbApplication.java
+│       └── src/main/resources/
+│           └── application.properties           # Config
 ```
 
-## API Reference 🔗
+## 🔌 API Reference
 
-The backend exposes a single API endpoint for generating email replies.
+### Generate Email Reply
 
-*   **Endpoint**: `/api/email/generate`
-*   **Method**: POST
-*   **Request Body**: 
+**Endpoint:** `POST /api/email/generate`
 
-    ```json
-    {
-      "emailContent": "string",
-      "tone": "string"  //Optional: "Professional", "Friendly", "Casual", or "None". Defaults to no tone if empty.
-    }
-    ```
+**Request Body:**
+```json
+{
+  "emailContent": "Original email text here",
+  "tone": "Professional"
+}
+```
 
-*   **Response**: A string containing the generated email reply.
+**Tone Options:** `Professional` | `Friendly` | `Casual` | `None`
 
-## Contributing
+**Response:** Plain text email reply
 
-Contributions are welcome! Please follow these steps:
+**Example:**
+```bash
+curl -X POST http://localhost:8080/api/email/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "emailContent": "Can we schedule a meeting next week?",
+    "tone": "Professional"
+  }'
+```
 
-1.  Fork the repository.
-2.  Create a new branch for your feature or bug fix.
-3.  Make your changes and commit them with descriptive messages.
-4.  Push your changes to your fork.
-5.  Submit a pull request.
+## 🎨 Extension Features
 
-## License
+### UI Components
+- **Tone Dropdown** - Select reply style before generation
+- **AI Reply Button** - Triggers reply generation
+- **Loading State** - Visual feedback during generation
+- **Error Handling** - User-friendly error messages
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Integration Points
+- Detects Gmail compose window automatically
+- Injects UI into Gmail's native toolbar
+- Preserves Gmail's styling and UX
+- Works with both new emails and replies
 
-## Important Links
+## 🤝 Contributing
 
-*   **Repository**: [https://github.com/Kunal-109/AI-Powered-Email-Reply-generator](https://github.com/Kunal-109/AI-Powered-Email-Reply-generator)
+Contributions are welcome! 
 
-## Footer <footer>
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
 
-AI-Powered-Email-Reply-generator - [https://github.com/Kunal-109/AI-Powered-Email-Reply-generator](https://github.com/Kunal-109/AI-Powered-Email-Reply-generator) by Kunal-109.  Give a ⭐, Fork 🍴, Raise Issues 🐛. Your support is highly appreciated! 😊
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 🔗 Links
+
+- **Repository:** [GitHub](https://github.com/Kunal-109/AI-Powered-Email-Reply-generator)
+- **Issues:** [Report Bug](https://github.com/Kunal-109/AI-Powered-Email-Reply-generator/issues)
+- **Gemini API:** [Get API Key](https://makersuite.google.com/app/apikey)
+
+---
+
+<div align="center">
+
+### 💡 Built by [Kunal-109](https://github.com/Kunal-109)
+
+Give a ⭐ if this project helped you! | Fork 🍴 to contribute | Report 🐛 issues
+
+**[⬆ Back to Top](#ai-powered-email-reply-generator-️)**
+
+</div>
