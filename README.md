@@ -8,18 +8,18 @@ The AI-Powered Email Reply Generator is a project designed to simplify and exped
 
 ## Table of Contents 🗂️
 
-1.  [Features](#features-sparkles)
-2.  [Tech Stack](#tech-stack-computer)
-3.  [Installation](#installation-gear)
-4.  [Usage](#usage-rocket)
-5.  [Project Structure](#project-structure-file_folder)
-6.  [API Reference](#api-reference-link)
-7.  [Contributing](#contributing-handshake)
-8.  [License](#license-copyright)
-9.  [Important Links](#important-links-link)
-10. [Footer](#footer-page_facing_up)
+1.  [Features](#features)
+2.  [Tech Stack](#tech-stack)
+3.  [Installation](#installation)
+4.  [Usage](#usage)
+5.  [Project Structure](#project-structure)
+6.  [API Reference](#api-reference)
+7.  [Contributing](#contributing)
+8.  [License](#license)
+9.  [Important Links](#important-links)
+10. [Footer](#footer-page)
 
-## Features ✨
+## Features
 
 *   **AI-Powered Reply Generation**: Utilizes AI (Gemini API) to generate email replies based on email content.
 *   **Tone Selection**: Allows users to specify the tone of the generated reply (Professional, Friendly, Casual, or None).
@@ -28,14 +28,14 @@ The AI-Powered Email Reply Generator is a project designed to simplify and exped
 *   **Spring Boot Backend**: Handles API requests and integrates with the AI model.
 *   **Copy to Clipboard**: Easily copy the generated reply to the clipboard.
 
-## Tech Stack 💻
+## Tech Stack
 
 *   **Frontend**: React, JavaScript, Vite, Material UI, Emotion
 *   **Backend**: Java, Spring Boot
 *   **AI**: Gemini API
 *   **Other**: Maven
 
-## Installation ⚙️
+## Installation️
 
 To set up the project locally, follow these steps:
 
@@ -77,7 +77,7 @@ To set up the project locally, follow these steps:
     gemini.api.url=https://generativelanguage.googleapis.com
     ```
 
-## Usage 🚀
+## Usage
 
 ### Running the Frontend
 
@@ -125,7 +125,7 @@ Imagine you receive a lengthy email requesting your input on a project proposal.
 3.  Click "Generate Reply".
 4.  The AI will generate a professional and relevant email reply, which you can then copy and paste into your email.
 
-## Project Structure 📂
+## Project Structure
 
 ```
 AI-Powered-Email-Reply-generator/
@@ -179,7 +179,7 @@ The backend exposes a single API endpoint for generating email replies.
 
 *   **Response**: A string containing the generated email reply.
 
-## Contributing 🤝
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -189,11 +189,11 @@ Contributions are welcome! Please follow these steps:
 4.  Push your changes to your fork.
 5.  Submit a pull request.
 
-## License ⚖️
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Important Links 🔗
+## Important Links
 
 *   **Repository**: [https://github.com/Kunal-109/AI-Powered-Email-Reply-generator](https://github.com/Kunal-109/AI-Powered-Email-Reply-generator)
 
